@@ -2,7 +2,15 @@ import React, { useState } from "react";
 import Dashboard from "./Dashboard";
 import Charts from "./Charts";
 
-const deviceNames = ["Device1", "Device2", "Device3"]; // Dispositivos esperados
+// Dispositivos esperados
+const deviceNames = ["Device1", "Device2", "Device3"];
+
+// Función para mapear los nombres de los dispositivos a los nombres en español
+const deviceNameMap = {
+  Device1: "Dispositivo 1",
+  Device2: "Dispositivo 2",
+  Device3: "Dispositivo 3",
+};
 
 const Tabs = ({ data }) => {
   const [selectedDevice, setSelectedDevice] = useState(deviceNames[0]); // Iniciar con Device1
@@ -31,7 +39,7 @@ const Tabs = ({ data }) => {
                 : "bg-gray-200 text-gray-700"
             }`}
           >
-            {device}
+            {deviceNameMap[device]} {/* Mostrar el nombre en español */}
           </button>
         ))}
       </div>
@@ -43,7 +51,7 @@ const Tabs = ({ data }) => {
           <Charts data={filteredData[selectedDevice]} />
         </>
       ) : (
-        <p className="text-center text-gray-500">No hay datos para {selectedDevice}.</p>
+        <p className="text-center text-gray-500">No hay datos para {deviceNameMap[selectedDevice]}.</p>
       )}
     </div>
   );
