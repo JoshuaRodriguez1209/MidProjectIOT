@@ -59,7 +59,7 @@ const Charts = ({ data }) => {
 
         {/* Gráfico de Humedad */}
         <div className="bg-white shadow-lg rounded-lg p-4">
-          <h3 className="text-lg font-semibold text-center mb-2">Humedad</h3>
+          <h3 className="text-lg font-semibold text-center mb-2">Humedad del aire</h3>
           <ResponsiveContainer width="100%" height={300}>
             <LineChart data={chartData}>
               <CartesianGrid strokeDasharray="3 3" />
@@ -67,6 +67,18 @@ const Charts = ({ data }) => {
               <YAxis />
               <Tooltip />
               <Line type="monotone" dataKey="humidity" stroke="#00aaff" />
+            </LineChart>
+          </ResponsiveContainer>
+        </div>
+        <div className="bg-white shadow-lg rounded-lg p-4">
+          <h3 className="text-lg font-semibold text-center mb-2">Humedad del suelo</h3>
+          <ResponsiveContainer width="100%" height={300}>
+            <LineChart data={chartData}>
+              <CartesianGrid strokeDasharray="3 3" />
+              <XAxis dataKey="time" axisLine={true} tick={false} />
+              <YAxis />
+              <Tooltip />
+              <Line type="monotone" dataKey="soil_moisture" stroke="#22c55e" />
             </LineChart>
           </ResponsiveContainer>
         </div>
