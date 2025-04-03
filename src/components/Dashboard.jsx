@@ -13,9 +13,9 @@ const formatDate = (timestamp) => {
   });
 };
 const deviceNameMap = {
-  Device1: "Dispositivo 1",
-  Device2: "Dispositivo 2",
-  Device3: "Dispositivo 3",
+  Device1: "Cilantro",
+  Device2: "Perejil",
+  Device3: "Lechuga",
 };
 const Dashboard = ({ data }) => {
   if (!data || Object.keys(data).length === 0) {
@@ -29,9 +29,15 @@ const Dashboard = ({ data }) => {
   return (
     <div className="max-w-4xl mx-auto">
       <h2 className="text-3xl font-bold text-center text-indigo-700 mb-6">
-        📊 Últimos Datos del {deviceNameMap[lastData.device] || "Dispositivo"}
+        📊 Últimos Datos de {deviceNameMap[lastData.device] || "Dispositivo"}
       </h2>
-      
+      <div className="text-center mb-6">
+        <img 
+          src={`/public/${deviceNameMap[lastData.device]}.jpeg`} 
+          alt={deviceNameMap[lastData.device]} 
+          className="w-48 h-48 mx-auto object-cover rounded-full" 
+        />
+      </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {/* Humedad del aire */}
         <div className="bg-white shadow-lg rounded-lg p-6 flex items-center gap-4">
