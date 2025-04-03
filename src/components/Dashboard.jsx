@@ -33,7 +33,7 @@ const Dashboard = ({ data }) => {
       </h2>
       <div className="text-center mb-6">
         <img 
-          src={`public/${deviceNameMap[lastData.device]}.jpeg`} 
+          src={`/images/${deviceNameMap[lastData.device]}.jpeg`} 
           alt={deviceNameMap[lastData.device]} 
           className="w-48 h-48 mx-auto object-cover rounded-full" 
         />
