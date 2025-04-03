@@ -32,28 +32,13 @@ const Dashboard = ({ data }) => {
         📊 Últimos Datos de {deviceNameMap[lastData.device] || "Dispositivo"}
       </h2>
       <div className="text-center mb-6">
-  {deviceNameMap[lastData.device] === "cilantro" ? (
-    <img  
-      src="https://firebasestorage.googleapis.com/v0/b/proyectouber-aa293.firebasestorage.app/o/cilantro.jpeg?alt=media&token=d5373925-30b2-4368-9316-6d27df2ac4e8"
-      alt="Cilantro" 
-      className="w-48 h-48 mx-auto object-cover rounded-full" 
-    />
-  ) : deviceNameMap[lastData.device] === "perejil" ? (
-    <img  
-      src="https://firebasestorage.googleapis.com/v0/b/proyectouber-aa293.firebasestorage.app/o/perejil.jpeg?alt=media&token=d5373925-30b2-4368-9316-6d27df2ac4e8"
-      alt="Perejil" 
-      className="w-48 h-48 mx-auto object-cover rounded-full" 
-    />
-  ) : deviceNameMap[lastData.device] === "lechuga" ? (
-    <img  
-      src="https://firebasestorage.googleapis.com/v0/b/proyectouber-aa293.firebasestorage.app/o/lechuga.jpeg?alt=media&token=d5373925-30b2-4368-9316-6d27df2ac4e8"
-      alt="Lechuga" 
-      className="w-48 h-48 mx-auto object-cover rounded-full" 
-    />
-  ) : (
-    <div className="text-gray-500">Imagen no disponible</div>
-  )}
-</div>
+      <img  
+  src={`https://firebasestorage.googleapis.com/v0/b/proyectouber-aa293.firebasestorage.app/o/${deviceNameMap[lastData.device]}.jpeg?alt=media&token=d5373925-30b2-4368-9316-6d27df2ac4e8`}
+  alt={deviceNameMap[lastData.device]} 
+  className="w-48 h-48 mx-auto object-cover rounded-full" 
+/>
+
+      </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {/* Humedad del aire */}
         <div className="bg-white shadow-lg rounded-lg p-6 flex items-center gap-4">
