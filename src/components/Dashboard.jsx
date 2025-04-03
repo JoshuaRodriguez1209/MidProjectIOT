@@ -13,9 +13,9 @@ const formatDate = (timestamp) => {
   });
 };
 const deviceNameMap = {
-  Device1: "Cilantro",
-  Device2: "Perejil",
-  Device3: "Lechuga",
+  Device1: "cilantro",
+  Device2: "perejil",
+  Device3: "lechuga",
 };
 const Dashboard = ({ data }) => {
   if (!data || Object.keys(data).length === 0) {
@@ -33,7 +33,7 @@ const Dashboard = ({ data }) => {
       </h2>
       <div className="text-center mb-6">
         <img 
-          src={`/${deviceNameMap[lastData.device]}.jpeg`} 
+          src={`public/${deviceNameMap[lastData.device]}.jpeg`} 
           alt={deviceNameMap[lastData.device]} 
           className="w-48 h-48 mx-auto object-cover rounded-full" 
         />
